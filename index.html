@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle de Finanças</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Adicionar Transação</h1>
+
+    <form id="form-transacao">
+      <input type="text" id="descricao" placeholder="Descrição" required>
+      <input type="number" id="valor" placeholder="Valor (R$)" required>
+      <select id="categoria" required>
+        <option value="">Categoria</option>
+        <option value="Alimentação">Alimentação</option>
+        <option value="Transporte">Transporte</option>
+        <option value="Lazer">Lazer</option>
+        <option value="Outros">Outros</option>
+      </select>
+      <select id="tipo" required>
+        <option value="receita">Receita</option>
+        <option value="despesa">Despesa</option>
+      </select>
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <form id="form-salario">
+      <input type="number" id="inputSalario" placeholder="Atualizar Salário (R$)">
+      <button type="submit">Salvar Salário</button>
+    </form>
+
+    <div class="botoes">
+      <a href="transacoes.html">Ver Transações</a>
+      <a href="graficos.html">Ver Gráficos</a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+</html>
